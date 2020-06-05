@@ -1,0 +1,59 @@
+#!/bin/bash
+
+	## Removendo travas eventuais do apt ##
+sudo rm /var/lib/dpkg/lock-frontend;
+sudo rm /var/cache/apt/archives/lock;
+
+	## Atualizar o sistema ##
+sudo apt update && sudo apt upgrade -y
+
+	## Config ##
+gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
+
+
+
+	## Adicionar PPA's ##
+sudo apt install flatpak
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+sudo add-apt-repository ppa:inkscape.dev/stable
+
+sudo apt-add-repository ppa:graphics-drivers/ppa
+sudo apt  update && sudo apt upgrade
+
+
+	#---------------------Programas---------------------#
+	
+	## Externos ##
+	
+mkdir /home/$USER/Downloads/programas
+cd /home/$USER/Downloads/programas
+wget -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+sudo dpkg -i*.deb
+	
+	## Snaps ##
+sudo apt install gnome-software # instala g.s.flatpak #
+sudo apt install ubuntu-restricted-extras # ? #
+sudo apt install unrar # habilita leitor de rar #
+sudo apt install gnome-tweaks # instala ajustes #
+sudo apt install telegram-desktop # instala telegram #
+sudo apt install inkscape # instala inkscape #
+sudo apt install neofetch # intala neofecth #
+sudo snap install scrcpy # instala scream copy #
+sudo snap install mailspring # instala gerenciador de emails #
+sudo apt install flameshot # instala capturador de tela #
+sudo apt install vlc # instala reprodutor de vídeo #
+sudo apt install gnome-sushi # instala gnome-sushi #
+sudo snap install photogimp # instala snap photgimp #
+
+echo "Finalizamos a instalação!"
+	
+	
+	
+
+
+
+
+
+
